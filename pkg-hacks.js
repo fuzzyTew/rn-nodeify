@@ -526,8 +526,8 @@ var hackers = [
     }
   },
   {
-    name: 'hyperhash',
-    regex: [/siphash24|xsalsa20/],
+    name: 'splitbuffer',
+    regex: [/./],
     hack: function (file, contents) {
       if (isInReactNative(file)) return
 
