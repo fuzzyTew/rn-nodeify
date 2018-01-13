@@ -525,6 +525,18 @@ var hackers = [
       return contents === fixed ? null : fixed
     }
   },
+  {
+    name: 'siphash24',
+    regex: [/siphash24\/siphash24\.js/],
+    hack: function (file, contents) {
+      if (isInReactNative(file)) return
+
+      var evil = "require('buf' + 'fer')"
+      if (contents.indexOf(evil) !== -1) {
+        return contents.replace(evil, "require('buffer')")
+      }
+    }
+  },
 ]
 
 function rewireMain (pkg) {
