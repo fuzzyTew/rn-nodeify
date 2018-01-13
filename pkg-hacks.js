@@ -526,8 +526,8 @@ var hackers = [
     }
   },
   {
-    name: 'siphash24',
-    regex: [/siphash24\/siphash24\.js/],
+    name: 'hyperhash',
+    regex: [/siphash24|xsalsa20/],
     hack: function (file, contents) {
       if (isInReactNative(file)) return
 
